@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Grocery Shop</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#F5F5DC;
+}
+
+.hero{
+    background:linear-gradient(#ffbf00);
+    color:black;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.cart-box{
+    background:#198754;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+}
+
+footer{
+    background:#ffbf00;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+🥬 Fresh Grocery Shop
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Products</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="#">🛒 Cart : <span id="cart-count">0</span></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+            <div class="col-md-6">
+                <h1>
+                    Fresh <span style="color:#008000;">Grocery</span> Delivered To Your Door
+                </h1>
+
+                <p>Buy Fruits, Vegetables, Dairy & Snacks at Best Prices</p>
+
+                <input type="text"
+                       class="form-control mt-3"
+                       placeholder="Search Products...">
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-md-6 text-end">
+                <img src="images/grocery store.jpeg"
+                     class="img-fluid"
+                     style="width:400px;
+                     border-radius:20px;">
+            </div>
+
+        </div>
+    </div>
+</section>    
+
+
+<!-- Products -->
+<div class="container mt-5">
+
+<h2 class="text-center mb-4"><b>Fruits Session</b></h2>
+
+<div class="row" id="productContainer">
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/apple1.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Apple</h5>
+<p>₹180 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/banana.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Banana</h5>
+<p>₹60 / Dozen</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/orange.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Orange</h5>
+<p>₹120 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/mango1.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Mango</h5>
+<p>₹70 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/pineapple.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Pineapple</h5>
+            <p>₹50 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/muskmelon.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Muskmelon</h5>
+            <p>₹40  / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/jackfruit.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Jackfruit</h5>
+            <p>₹120 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/pomegranate.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Pomegranate</h5>
+            <p>₹130 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="container mt-5">
+<div class="alert alert-warning text-center">
+<h3>🎉 Today's Offer</h3>
+<p>Buy 2 Kg Apples and Get 10% OFF</p>
+</div>
+</div>
+
+<!-- Products -->
+<div class="container mt-5">
+
+<h2 class="text-center mb-4"><b>Vegetables Session</b></h2>
+
+<div class="row" id="productContainer">
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/tomato.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Tomato</h5>
+<p>₹20 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/carrot.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Carrot</h5>
+<p>₹30 / Dozen</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/potato.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Potato</h5>
+<p>₹40 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/lays finger.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Lady's Finger</h5>
+<p>₹30 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/pumpkin.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Pumpkin</h5>
+            <p>₹20 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/cabbage.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Cabbage</h5>
+            <p>₹20  / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/beetroot.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Beet Root</h5>
+            <p>₹30 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+    <div class="card h-100 shadow">
+        <img src="images/capsicum.jpeg" class="card-img-top">
+        <div class="card-body text-center">
+            <h5>Capsicum</h5>
+            <p>₹120 / Kg</p>
+            <button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="container mt-5">
+<div class="alert alert-warning text-center">
+<h3>🎉 Today's Offer</h3>
+<p>Buy 2 Kg Capsicum and Get 10% OFF</p>
+</div>
+</div>
+<!-- Products -->
+<div class="container mt-5">
+
+<h2 class="text-center mb-4"><b>Snacks Session</b></h2>
+
+<div class="row" id="productContainer">
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/potato chips.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Potato Chips</h5>
+<p>₹40 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/banana chips.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Banana Chips</h5>
+<p>₹40 / kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/kajukatli.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Kaju Katli</h5>
+<p>₹130 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/barfi.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Barfi</h5>
+<p>₹140 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+<!-- Products -->
+<div class="container mt-5">
+
+<h2 class="text-center mb-4"><b>Rices Session</b></h2>
+
+<div class="row" id="productContainer">
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/basmatirice.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Basmati Rice</h5>
+<p>₹300 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/black rice.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Black Rice</h5>
+<p>₹350 / kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/samba rice.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Samba Rice</h5>
+<p>₹370 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/ponni rice.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Ponni Rice</h5>
+<p>₹120 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+<!-- Products -->
+<div class="container mt-5">
+
+<h2 class="text-center mb-4"><b>Masala Session</b></h2>
+
+<div class="row" id="productContainer">
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/turmeric powder1.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Turmeric Powder</h5>
+<p>₹40 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/gram masala.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Garam Masala</h5>
+<p>₹90 / kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/curry masala.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Curry Masala</h5>
+<p>₹80 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4 product">
+<div class="card">
+<img src="images/chili powder.jpeg" class="card-img-top">
+<div class="card-body text-center">
+<h5>Chilli Powder</h5>
+<p>₹120 / Kg</p>
+<button class="btn btn-success" onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+</div>
+<div class="container mt-5">
+<h2 class="text-center">Customer Reviews</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card p-3">
+⭐⭐⭐⭐⭐
+<p>Very Fresh Products.</p>
+<h6>- Priya</h6>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+⭐⭐⭐⭐⭐
+<p>Fast Delivery.</p>
+<h6>- Arun</h6>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+⭐⭐⭐⭐⭐
+<p>Best Grocery Shop.</p>
+<h6>- Devi</h6>
+</div>
+</div>
+
+</div>
+</div>
+<div class="container mt-5">
+<h2 class="text-center">Contact Us</h2>
+
+<form>
+
+<input type="text"
+class="form-control mb-3"
+placeholder="Your Name">
+
+<input type="email"
+class="form-control mb-3"
+placeholder="Email">
+
+<textarea
+class="form-control mb-3"
+rows="5"
+placeholder="Message"></textarea>
+
+<button class="btn btn-success">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+
+<!-- Footer -->
+<footer>
+<h4>Fresh Grocery Shop</h4>
+<p>Fresh Products | Fast Delivery | Best Quality</p>
+</footer>
+
+<script>
+
+let count = 0;
+
+function addToCart(){
+    count++;
+    document.getElementById("cartCount").innerText = count;
+}
+
+function searchProduct(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let products =
+document.querySelectorAll(".product");
+
+products.forEach(product=>{
+
+let name =
+product.querySelector("h5")
+.innerText.toLowerCase();
+
+if(name.includes(input)){
+product.style.display="block";
+}
+else{
+product.style.display="none";
+}
+
+});
+
+}
+
+</script>
+<script>
+function addToCart() {
+    alert("✅ Item added to cart successfully!");
+}
+</script>
+
+</body>
+</html>
